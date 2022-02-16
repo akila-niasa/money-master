@@ -12,12 +12,16 @@ function totalCost(){
 document.getElementById("cost-buttton").addEventListener("click",function(){
     const expenses=document.getElementById("expenses")
     expenses.innerText=totalCost()
-
     const input=document.getElementById("input")
     const inputValue=input.value
+    if(inputValue>0){
+        const balance=document.getElementById("balance")
+        balance.innerText=parseFloat(inputValue)-totalCost()
+    }
+    else{
+        alert("please input a positive value")
+    }
 
-    const balance=document.getElementById("balance")
-    balance.innerText=inputValue-totalCost()
 })
 document.getElementById("save-button").addEventListener("click",function(){
     let save=document.getElementById("save").value
