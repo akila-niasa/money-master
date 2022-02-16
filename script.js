@@ -1,5 +1,4 @@
 function totalCost(){
-    const input=document.getElementById("input")
     const food=document.getElementById("food")
     const foodValue=food.value
     const rent=document.getElementById("rent")
@@ -7,9 +6,28 @@ function totalCost(){
     const clothe=document.getElementById("clothes")
     const clotheValue=clothe.value
     const totalPrice=parseFloat(foodValue)+parseFloat(rentValue)+parseFloat(clotheValue)
+   
     return totalPrice
 }
 document.getElementById("cost-buttton").addEventListener("click",function(){
-    totalCost()
-    console.log("good")
+    const expenses=document.getElementById("expenses")
+    expenses.innerText=totalCost()
+
+    const input=document.getElementById("input")
+    const inputValue=input.value
+
+    const balance=document.getElementById("balance")
+    balance.innerText=inputValue-totalCost()
+})
+document.getElementById("save-button").addEventListener("click",function(){
+    let save=document.getElementById("save").value
+    const saveValue=save
+
+    const balance=document.getElementById("balance")
+    const balanceValue=balance.innerText
+    const savingAmmount=document.getElementById("save-amount")
+    savingAmmount.innerText=parseFloat(balanceValue)*(parseFloat(saveValue)/100)
+
+    const remainingBalance=document.getElementById("remaining-balance")
+    remainingBalance.innerText=parseFloat(balanceValue)-parseFloat( savingAmmount.innerText)
 })
