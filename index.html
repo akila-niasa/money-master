@@ -15,37 +15,52 @@
    <!-------------Main code starts here------------ -->
    <main>
        <section class="container mt-5 mb-5">
-           <article class="row ">
+           <article class="row gap-1">
                <div class=" col-lg-5 col-12">
                     <!-------------- Image add section --------------------->
                     <img class="img-fluid h-75" src="money.jpg" alt="">
                </div>
  <!-- ----------Cost Section -------------- -->
-               <div class="col-12 col-lg-7">
-                   <h2>INCOME</h2>
+               <div class="col-12 col-lg-6 cont">
+                   <h2 class="text-center " >INCOME</h2>
                    <div class="d-flex">
                        <p>Income:</p>
-                       <input id="input" class="mx-auto" type="text"  aria-label="Sizing example input">
+                       <input id="input" class="mx-auto mb-2" type="text"  aria-label="Sizing example input">
+                       <span id="error"></span>
                    </div>
-                   <h2 class="mb-3">Expenses</h2>
-                   <div class="d-flex mt-3 mb-2">
-                    <p>Food:</p>
-                    <input id="food" class="mx-auto mb-2" type="text">
-                </div>
-                   <div class="d-flex mt-2">
-                    <p>Rent:</p>
-                    <input id="rent" class="mx-auto mb-2" type="text">
-                </div>
-                   <div class="d-flex mt-2 mb-2">
-                    <p>Clothes: </p>
-                    <input id="clothes" class="mx-auto" type="text">
-                </div>
+                   <h2 class="mb-3 text-center ">Expenses</h2>
+                   <span id="expenses-error"></span>
+                  <div class="row">
+                      <div class="col">
+                        <div class=" mt-3 mb-2"><p>Food:</p></div>
+
+                        <div class=" mt-2">
+                            <p>Rent:</p></div>
+                     
+                      <div class=" mt-2 mb-2">
+                        <p>Clothes: </p></div>
+                    </div>
+                      <div class="col">
+
+                           
+                            <input id="food" class="mx-auto mb-2" type="text">
+
+                           
+                            <input id="rent" class="mx-auto mb-2" type="text">
+
+
+                            
+                            <input id="clothes" class="mx-auto" type="text">
+
+                      </div>
+                  </div>
  <!-------------------- Cost buttons------------ -->
 
                 <button id="cost-buttton" class="mt-3 button-color d-flex justify-content-center"type="submit">calculate</button>
                 <div class="mt-3">
  <!-- ------------Total Cost------------- -->
                     <p class="d-flex justify-content-end">Total Expenses:<span id="expenses">0</span> </p>
+                    <span id="extra-expenses-error"></span>
                     <br>
                     <p class="d-flex justify-content-end">Balance: <span id="balance">0</span></p>
                 </div>
@@ -63,6 +78,7 @@
                        <button id="save-button"class="button-color">save</button> 
                     </div>
                 </div>
+                <span id="error-msg"></span>
 <!----------- ---Final cost-------------- -->
                 <div class="mt-5">
                     <p>
